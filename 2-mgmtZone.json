@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      0
+    ]
+  },
+  "name": "PTC",
+  "rules": [
+    {
+      "type": "SERVICE",
+      "enabled": true,
+      "propagationTypes": [
+        "SERVICE_TO_PROCESS_GROUP_LIKE",
+        "SERVICE_TO_HOST_LIKE"
+      ],
+      "conditions": [
+        {
+          "key": {
+            "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+            "dynamicKey": "COMMAND_LINE_ARGS",
+            "type": "PROCESS_PREDEFINED_METADATA_KEY"
+          },
+          "comparisonInfo": {
+            "type": "STRING",
+            "operator": "CONTAINS",
+            "value": "MethodServer",
+            "negate": false,
+            "caseSensitive": true
+          }
+        }
+      ]
+    }
+  ],
+  "dimensionalRules": []
+}

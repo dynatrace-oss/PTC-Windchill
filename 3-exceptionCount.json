@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      0
+    ]
+  },
+  "tsmMetricKey": "calc:service.exceptioncount",
+  "name": "Exception Count",
+  "enabled": true,
+  "metricDefinition": {
+    "metric": "EXCEPTION_COUNT",
+    "requestAttribute": null
+  },
+  "unit": "COUNT",
+  "unitDisplayName": null,
+  "entityId": null,
+  "managementZones": [
+    "PTC"
+  ],
+  "conditions": [
+    {
+      "attribute": "EXCEPTION_CLASS",
+      "comparisonInfo": {
+        "type": "STRING",
+        "comparison": "EXISTS",
+        "value": null,
+        "negate": false,
+        "caseSensitive": false
+      }
+    }
+  ],
+  "dimensionDefinition": {
+    "name": "Dimension",
+    "dimension": "{Exception:Class}",
+    "placeholders": [],
+    "topX": 100,
+    "topXDirection": "DESCENDING",
+    "topXAggregation": "SUM"
+  }
+}

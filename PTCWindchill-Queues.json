@@ -1,0 +1,255 @@
+{
+    "metadata": {
+        "configurationVersions": [3]
+    },
+    "dashboardMetadata": {
+        "name": "PTC Windchill - Queues",
+        "shared": false,
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "",
+            "managementZone": {
+                "id": "3584446464239752399",
+                "name": "PTC"
+            }
+        }
+    },
+    "tiles": [{
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 0,
+            "width": 684,
+            "height": 418
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "PublisherQueues-WaitingReadyEntries",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Name",
+                        "values": ["PublisherQueue1", "PublisherQueueCLASH1", "PublisherQueueCLASHH", "PublisherQueueCLASHL", "PublisherQueueCLASHM", "PublisherQueueH", "PublisherQueueL", "PublisherQueueM", "PublisherQueuePRINT1", "PublisherQueuePRINTH", "PublisherQueuePRINTL", "PublisherQueuePRINTM", "PublisherQueueSIS1", "PublisherQueueSISH", "PublisherQueueSISL", "PublisherQueueSISM"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 0,
+            "width": 684,
+            "height": 380
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "PublisherQueues-TotalEntries",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Name",
+                        "values": ["PublisherQueue1", "PublisherQueueCLASH1", "PublisherQueueCLASHH", "PublisherQueueCLASHL", "PublisherQueueCLASHM", "PublisherQueuePRINT1", "PublisherQueueH", "PublisherQueueL", "PublisherQueueM", "PublisherQueuePRINTH", "PublisherQueuePRINTL", "PublisherQueuePRINTM", "PublisherQueueSIS1", "PublisherQueueSISH", "PublisherQueueSISL", "PublisherQueueSISM"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 0,
+            "width": 684,
+            "height": 418
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "PublisherQueues-MaxEntryExecTimeSeconds",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Name",
+                        "values": ["PublisherQueue1", "PublisherQueueCLASH1", "PublisherQueueCLASHH", "PublisherQueueCLASHL", "PublisherQueueCLASHM", "PublisherQueueH", "PublisherQueueL", "PublisherQueueM", "PublisherQueuePRINT1", "PublisherQueuePRINTH", "PublisherQueuePRINTL", "PublisherQueuePRINTM", "PublisherQueueSIS1", "PublisherQueueSISH", "PublisherQueueSISL", "PublisherQueueSISM"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 684,
+            "width": 646,
+            "height": 380
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "WfQueues-TotalEntries",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Name",
+                        "values": ["WfScheduleQueue", "WfUserWorkQueue", "WfProcessDeletionQueue", "WfPropagationQueue", "WVSScheduleQueue"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 684,
+            "width": 646,
+            "height": 418
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "WfQueues-WaitingReadyEntries",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Name",
+                        "values": ["WfScheduleQueue", "WfProcessDeletionQueue", "WfPropagationQueue", "WfUserWorkQueue"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 684,
+            "width": 646,
+            "height": 418
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "WfQueues-MaxEntryExecTimeSeconds",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Name",
+                        "values": ["WfProcessDeletionQueue", "WfPropagationQueue", "WfScheduleQueue", "WfUserWorkQueue"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 532,
+            "width": 342,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "#**Publisher & Wf Queues**"
+    }]
+}

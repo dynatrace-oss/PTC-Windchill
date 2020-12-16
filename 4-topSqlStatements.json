@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      0
+    ]
+  },
+  "tsmMetricKey": "calc:service.topsqlstatements",
+  "name": "Top SQL Statements",
+  "enabled": true,
+  "metricDefinition": {
+    "metric": "REQUEST_COUNT",
+    "requestAttribute": null
+  },
+  "unit": "COUNT",
+  "unitDisplayName": null,
+  "entityId": null,
+  "managementZones": [],
+  "conditions": [
+    {
+      "attribute": "SERVICE_TYPE",
+      "comparisonInfo": {
+        "type": "SERVICE_TYPE",
+        "comparison": "EQUALS",
+        "value": "DATABASE_SERVICE",
+        "negate": false
+      }
+    }
+  ],
+  "dimensionDefinition": {
+    "name": "Dimension",
+    "dimension": "{Database-Statement}",
+    "placeholders": [],
+    "topX": 100,
+    "topXDirection": "DESCENDING",
+    "topXAggregation": "SINGLE_VALUE"
+  }
+}
