@@ -21,3 +21,4 @@ POST | /api/config/v1//dashboards | PTCWindchillOverview.json
 POST | /api/config/v1//dashboards | PTCWindchillUserData.json
   
 * Using Dynatrace UI, edit the application **PTC Windchill** to the following application detection rule:  
+![Application Detection Rule](/images/ApplicationDetectionRule.png)
