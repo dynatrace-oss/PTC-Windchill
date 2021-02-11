@@ -1,0 +1,136 @@
+{
+  "version": "1.1",
+  "name": "custom.jmx.Queues-1",
+  "type": "JMX",
+  "metricGroup": "custom.jmx.Queues",
+  "entity": "PROCESS_GROUP_INSTANCE",
+  "configUI": {
+    "displayName": "Queues"
+  },
+  "ui": {
+    "charts": [
+      {
+        "group": "MaxEntryExecTimeSeconds Queues metrics",
+        "title": "MaxEntryExecTimeSeconds",
+        "series": [
+          {
+            "key": "metric_MaxEntryExecTimeSeconds-1",
+            "aggregation": "max",
+            "displayname": "MaxEntryExecTimeSeconds"
+          }
+        ]
+      },
+      {
+        "group": "TotalEntries Queues metrics",
+        "title": "TotalEntries",
+        "series": [
+          {
+            "key": "metric_TotalEntries-1",
+            "aggregation": "max",
+            "displayname": "TotalEntries"
+          }
+        ]
+      },
+      {
+        "group": "WaitingReadyEntries Queues metrics",
+        "title": "WaitingReadyEntries",
+        "series": [
+          {
+            "key": "metric_WaitingReadyEntries-1",
+            "aggregation": "avg",
+            "displayname": "WaitingReadyEntries"
+          }
+        ]
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "timeseries": {
+        "key": "metric_MaxEntryExecTimeSeconds-1",
+        "unit": "Second",
+        "displayname": "MaxEntryExecTimeSeconds",
+        "dimensions": [
+          "rx_pid",
+		  "Name"
+        ]
+      },
+      "source": {
+        "domain": "com.ptc",
+        "keyProperties": {
+          "Name": "*",
+          "wt.monitorType": "Queues",
+          "wt.subsystem": "Monitors"
+        },
+		"splitting": {
+				"name": "Name",
+				"type": "keyProperty",
+				"keyProperty": "Name"
+		},
+        "attribute": "MaxEntryExecTimeSeconds",
+        "allowAdditionalKeys": true,
+        "calculateDelta": false,
+        "calculateRate": false,
+        "aggregation": "MAX"
+      }
+    },
+	{
+      "timeseries": {
+        "key": "metric_TotalEntries-1",
+        "unit": "Count",
+        "displayname": "TotalEntries",
+        "dimensions": [
+          "rx_pid",
+		  "Name"
+        ]
+      },
+      "source": {
+        "domain": "com.ptc",
+        "keyProperties": {
+          "Name": "*",
+          "wt.monitorType": "Queues",
+          "wt.subsystem": "Monitors"
+        },
+		"splitting": {
+				"name": "Name",
+				"type": "keyProperty",
+				"keyProperty": "Name"
+		},
+        "attribute": "TotalEntries",
+        "allowAdditionalKeys": true,
+        "calculateDelta": false,
+        "calculateRate": false,
+        "aggregation": "MAX"
+      }
+    },
+	{
+      "timeseries": {
+        "key": "metric_WaitingReadyEntries-1",
+        "unit": "Count",
+        "displayname": "WaitingReadyEntries",
+        "dimensions": [
+          "rx_pid",
+		  "Name"
+        ]
+      },
+      "source": {
+        "domain": "com.ptc",
+        "keyProperties": {
+          "Name": "*",
+          "wt.monitorType": "Queues",
+          "wt.subsystem": "Monitors"
+        },
+		"splitting": {
+				"name": "Name",
+				"type": "keyProperty",
+				"keyProperty": "Name"
+		},
+        "attribute": "WaitingReadyEntries",
+        "allowAdditionalKeys": true,
+        "calculateDelta": false,
+        "calculateRate": false,
+        "aggregation": "AVG"
+      }
+    }
+  ]
+}
