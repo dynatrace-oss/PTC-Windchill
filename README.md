@@ -16,7 +16,6 @@ POST | /api/config/v1/applications/web | 1-application.json
 POST | /api/config/v1/managementZones | 2-mgmtZone.json  
 POST | /api/config/v1/calculatedMetrics/service | 3-exceptionCount.json  
 POST | /api/config/v1/calculatedMetrics/service | 4-topSqlStatements.json  
-POST | /api/config/v1//dashboards | PTCWindchillUserData.json
 POST | /api/config/v1//dashboards | dashboards/*.json
   
 * Using Dynatrace UI, edit the application **PTC Windchill** to the following application detection rule:  
