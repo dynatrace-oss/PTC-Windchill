@@ -14,7 +14,7 @@ POST | /api/config/v1/extensions | custom.jmx.ActiveUsers.zip |
 POST | /api/config/v1/extensions | custom.jmx.Queues.zip |
 POST | /api/config/v1/applications/web | 1-application.json |
 GET  | /applications/web | Run this command to get the application id | Note the application id
-POST | /applicationDetectionRules | 2-applicationDetectionRules.json | #Replace the application id in the json with the id received from the GET command above  
+POST | /applicationDetectionRules | 2-applicationDetectionRules.json | Replace the application id in the json with the id received from the GET command above  
 POST | /api/config/v1/managementZones | 3-mgmtZone.json  
 POST | /api/config/v1/calculatedMetrics/service | 4-exceptionCount.json  
 POST | /api/config/v1/calculatedMetrics/service | 5-topSqlStatements.json  
