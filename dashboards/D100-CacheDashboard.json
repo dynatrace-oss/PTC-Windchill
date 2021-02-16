@@ -1,0 +1,628 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.210.92.20210209-151321"
+    },
+    "dashboardMetadata": {
+        "name": "D100 - Cache Dashboard",
+        "shared": true,
+        "owner": "Dynatrace",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": true
+        }
+    },
+    "tiles": [{
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "IndexListCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.index.IndexListCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.index.IndexListCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "AclCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.access.AclCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.access.AclCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 608,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "PreferenceInstanceCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.preference.PreferenceInstanceCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.preference.PreferenceInstanceCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "StandardFvService$ActiveFolderCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.fv.StandardFvService$ActiveFolderCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.fv.StandardFvService$ActiveFolderCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "EnumerationDefinitionCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.core.lwc.server.cache.EnumerationDefinitionCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.core.lwc.server.cache.EnumerationDefinitionCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 608,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "StructEnumAttTemplateCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.core.lwc.server.cache.StructEnumAttTemplateCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.core.lwc.server.cache.StructEnumAttTemplateCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "IBADefViewManager$IBADefViewCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.iba.definition.service.IBADefViewManager$IBADefViewCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.iba.definition.service.IBADefViewManager$IBADefViewCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "WTPrincipalCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.org.WTPrincipalCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.org.WTPrincipalCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 608,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "PagingSessionCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.pom.PagingSessionCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.pom.PagingSessionCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "StandardUfidSrvService$RemoteObjectIdCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.ufid.StandardUfidSrvService$RemoteObjectIdCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["wt.ufid.StandardUfidSrvService$RemoteObjectIdCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "RoleAccessCache",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.netmarkets.roleAccess.RoleAccessCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.netmarkets.roleAccess.RoleAccessCache"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 608,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "TypeDefinitionCache2",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "ext:custom.jmx.Cache.metric_CacheEntryCount-1",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.core.lwc.server.cache.TypeDefinitionCache2"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "ext:custom.jmx.Cache.metric_CacheSize-1",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "PROCESS_GROUP_INSTANCE",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "name",
+                        "values": ["com.ptc.core.lwc.server.cache.TypeDefinitionCache2"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }]
+}

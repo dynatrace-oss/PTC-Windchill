@@ -8,15 +8,14 @@ API Token | You need the Write configuration (WriteConfig) permission assigned t
 
 * Please use any tool of your convenience (Postman, curl etc.) to make POST REST call to your Dynatrace tenant. 
   
-Method | Endpoint | Filename
-------------| ----------------------------------- | ---------------  
-POST | /api/config/v1/extensions | custom.jmx.ActiveUsers.zip
-POST | /api/config/v1/extensions | custom.jmx.Queues.zip
-POST | /api/config/v1/applications/web | 1-application.json  
-POST | /api/config/v1/managementZones | 2-mgmtZone.json  
-POST | /api/config/v1/calculatedMetrics/service | 3-exceptionCount.json  
-POST | /api/config/v1/calculatedMetrics/service | 4-topSqlStatements.json  
+Method | Endpoint | Filename | Notes
+------------| ----------------------------------- | --------------- | -----------------------
+POST | /api/config/v1/extensions | custom.jmx.ActiveUsers.zip |
+POST | /api/config/v1/extensions | custom.jmx.Queues.zip |
+POST | /api/config/v1/applications/web | 1-application.json |
+GET  | /applications/web | Run this command to get the application id | Note the application id
+POST | /applicationDetectionRules | 2-applicationDetectionRules.json | #Replace the application id in the json with the id received from the GET command above  
+POST | /api/config/v1/managementZones | 3-mgmtZone.json  
+POST | /api/config/v1/calculatedMetrics/service | 4-exceptionCount.json  
+POST | /api/config/v1/calculatedMetrics/service | 5-topSqlStatements.json  
 POST | /api/config/v1//dashboards | dashboards/*.json
-  
-* Using Dynatrace UI, edit the application **PTC Windchill** to the following application detection rule:  
-![Application Detection Rule](/images/ApplicationDetectionRule.png)

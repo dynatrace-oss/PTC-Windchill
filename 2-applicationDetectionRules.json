@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      0
+    ],
+    "clusterVersion": "1.210.92.20210209-151321"
+  },
+  "id": "e7c583fe-cd27-4016-8db4-3f09f0bfa441",
+  "applicationIdentifier": "APPLICATION-681D2E7F8A1E0E96",
+  "filterConfig": {
+    "pattern": "ptc",
+    "applicationMatchType": "CONTAINS",
+    "applicationMatchTarget": "DOMAIN"
+  }
+}
