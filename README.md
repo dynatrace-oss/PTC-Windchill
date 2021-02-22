@@ -18,4 +18,6 @@ POST | /applicationDetectionRules | 2-applicationDetectionRules.json | Replace t
 POST | /api/config/v1/managementZones | 3-mgmtZone.json  
 POST | /api/config/v1/calculatedMetrics/service | 4-exceptionCount.json  
 POST | /api/config/v1/calculatedMetrics/service | 5-topSqlStatements.json  
+POST | /api/config/v1/service/customServices/java?position=APPEND | 6-CustomService-Checkin.json
+POST | /api/config/v1/service/customServices/java?position=APPEND | 7-CustomService-Checkout.json
 POST | /api/config/v1//dashboards | dashboards/*.json
