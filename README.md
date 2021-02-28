@@ -1,23 +1,25 @@
 # PTC-Windchill
-This repo contains files that are required to create an application, metrics and dashboards to monitor PTC Windchill with Dynatrace.  
+This repo contains files that are required to create assets in Dynatrace tenant including an application, metrics and dashboards to monitor PTC Windchill.
 In order to create these entities in Dynatrace, you would need 2 items:
 Name | Description
 ------------ | -------------
 Dynatrace tenant url | `Managed` https://{your-domain}/e/{your-environment-id}  <br/>`SaaS` https://{your-environment-id}.live.dynatrace.com
 API Token | You need the Write configuration (WriteConfig) permission assigned to your API token  
 
-* Please use any tool of your convenience (Postman, curl etc.) to make POST REST call to your Dynatrace tenant. 
+All the relevant files required to create Dynatrace objects are in assets directory. Under this directory, subfolders are available to create the relevant objects in Dynatrace. For example, all the files to create different dashboards are under Dashboards directory. Each subfolder is prefixed by a numeric value to show the order in which these objects need to be created. Since ManagementZones are created first, it is named as 01-ManagementZones. 
+
+* Please use any tool of your convenience (Postman, curl etc.) to make POST REST call to your Dynatrace tenant. Please use the tool of your choice to apply REST calls for all the files in a given subfolder.
+
   
-Method | Endpoint | Filename | Notes
+Method | Endpoint | Subfolder Name | Notes
 ------------| ----------------------------------- | --------------- | -----------------------
-POST | /api/config/v1/extensions | custom.jmx.ActiveUsers.zip |
-POST | /api/config/v1/extensions | custom.jmx.Queues.zip |
-POST | /api/config/v1/applications/web | 1-application.json |
+POST | /api/config/v1/managementZones | 01-ManagementZones |
+POST | /api/config/v1/applications/web | 02-Application |
 GET  | /applications/web | Run this command to get the application id | Note the application id
-POST | /applicationDetectionRules | 2-applicationDetectionRules.json | Replace the application id in the json with the id received from the GET command above  
-POST | /api/config/v1/managementZones | 3-mgmtZone.json  
-POST | /api/config/v1/calculatedMetrics/service | 4-exceptionCount.json  
-POST | /api/config/v1/calculatedMetrics/service | 5-topSqlStatements.json  
-POST | /api/config/v1/service/customServices/java?position=APPEND | 6-CustomService-Checkin.json
-POST | /api/config/v1/service/customServices/java?position=APPEND | 7-CustomService-Checkout.json
-POST | /api/config/v1//dashboards | dashboards/*.json
+POST | /api/config/v1/applicationDetectionRules | 03-DetectionRules | Replace the application id in the json with the id received from the GET command above  
+POST | /api/config/v1/autoTags | 04-AutoTags | 
+POST | /api/config/v1/service/requestAttributes | 05-RequestAttributes |  
+POST | /api/config/v1/calculatedMetrics/service | 06-MetricsService |  
+POST | /api/config/v1/service/customServices/java?position=APPEND | 07-CustomServices |
+POST | /api/config/v1/extensions | 08-Extensions | Extensions require uploading of the zip file. 
+POST | /api/config/v1/dashboards | 11-Dashboards
