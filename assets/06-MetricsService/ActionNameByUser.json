@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      0
+    ],
+    "clusterVersion": "1.211.111.20210222-093946"
+  },
+  "tsmMetricKey": "calc:service.actionnamebyuser",
+  "name": "ActionNameByUser",
+  "enabled": true,
+  "metricDefinition": {
+    "metric": "RESPONSE_TIME",
+    "requestAttribute": null
+  },
+  "unit": "MICRO_SECOND",
+  "unitDisplayName": null,
+  "entityId": null,
+  "managementZones": [
+    "PTC"
+  ],
+  "conditions": [
+    {
+      "attribute": "SERVICE_REQUEST_ATTRIBUTE",
+      "comparisonInfo": {
+        "type": "STRING_REQUEST_ATTRIBUTE",
+        "comparison": "EXISTS",
+        "value": null,
+        "negate": false,
+        "requestAttribute": "GetRemoteUser",
+        "caseSensitive": false,
+        "matchOnChildCalls": false,
+        "source": null
+      }
+    },
+    {
+      "attribute": "SERVICE_REQUEST_ATTRIBUTE",
+      "comparisonInfo": {
+        "type": "STRING_REQUEST_ATTRIBUTE",
+        "comparison": "EXISTS",
+        "value": null,
+        "negate": false,
+        "requestAttribute": "ActionName",
+        "caseSensitive": false,
+        "matchOnChildCalls": false,
+        "source": null
+      }
+    }
+  ],
+  "dimensionDefinition": {
+    "name": "Dimension",
+    "dimension": "{RequestAttribute:ActionName} By {RequestAttribute:GetRemoteUser}",
+    "placeholders": [],
+    "topX": 50,
+    "topXDirection": "DESCENDING",
+    "topXAggregation": "AVERAGE"
+  }
+}

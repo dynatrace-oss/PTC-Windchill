@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      0
+    ],
+    "clusterVersion": "1.211.90.20210216-141629"
+  },
+  "name": "CheckOut",
+  "enabled": true,
+  "rules": [
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "wt.epm.workspaces.EPMStandardWorkspaceManager",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection",
+            "wt.vc.wip.WorkInProgressState"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "wt.epm.workspaces.EPMWorkspaceManager",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection",
+            "wt.vc.wip.WorkInProgressState"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "com.ptc.windchill.enterprise.wip.CheckoutObjectFormProcessor",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "doOperation",
+          "argumentTypes": [
+            "com.ptc.netmarkets.util.beans.NmCommandBean",
+            "java.util.List"
+          ],
+          "returnType": "com.ptc.core.components.forms.FormResult"
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "queueEntryPoint": false,
+  "queueEntryPointType": null,
+  "processGroups": []
+}

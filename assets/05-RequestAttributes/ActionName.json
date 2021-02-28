@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.211.111.20210222-093946"
+  },
+  "name": "ActionName",
+  "enabled": true,
+  "dataType": "STRING",
+  "dataSources": [
+    {
+      "enabled": true,
+      "source": "METHOD_PARAM",
+      "valueProcessing": {
+        "splitAt": "",
+        "trim": false,
+        "extractSubstring": {
+          "position": "BETWEEN",
+          "delimiter": "com.ptc.windchill.enterprise.wip.",
+          "endDelimiter": "ObjectFormProcessor"
+        }
+      },
+      "technology": "JAVA",
+      "methods": [
+        {
+          "method": {
+            "visibility": "PUBLIC",
+            "modifiers": [],
+            "className": "com.ptc.core.components.forms.DefaultFormProcessorController",
+            "methodName": "execute",
+            "argumentTypes": [
+              "com.ptc.netmarkets.util.beans.NmCommandBean"
+            ],
+            "returnType": "com.ptc.core.components.forms.FormResult"
+          },
+          "capture": "ARGUMENT",
+          "argumentIndex": 1,
+          "deepObjectAccess": ".getActionClass()"
+        }
+      ]
+    },
+    {
+      "enabled": true,
+      "source": "QUERY_PARAMETER",
+      "valueProcessing": {
+        "splitAt": "",
+        "trim": false
+      },
+      "parameterName": "actionName",
+      "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+    }
+  ],
+  "normalization": "ORIGINAL",
+  "aggregation": "FIRST",
+  "confidential": false,
+  "skipPersonalDataMasking": false
+}

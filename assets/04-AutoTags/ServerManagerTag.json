@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      7
+    ],
+    "clusterVersion": "1.211.111.20210222-093946"
+  },
+  "name": "ServerManager",
+  "rules": [
+    {
+      "type": "PROCESS_GROUP",
+      "enabled": true,
+      "valueFormat": null,
+      "propagationTypes": [],
+      "conditions": [
+        {
+          "key": {
+            "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+            "dynamicKey": "JAVA_MAIN_CLASS",
+            "type": "PROCESS_PREDEFINED_METADATA_KEY"
+          },
+          "comparisonInfo": {
+            "type": "STRING",
+            "operator": "CONTAINS",
+            "value": "ServerManagerMain",
+            "negate": false,
+            "caseSensitive": false
+          }
+        }
+      ]
+    }
+  ]
+}

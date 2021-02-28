@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.211.111.20210222-093946"
+  },
+  "name": "GetRemoteUser",
+  "enabled": true,
+  "dataType": "STRING",
+  "dataSources": [
+    {
+      "enabled": true,
+      "source": "METHOD_PARAM",
+      "valueProcessing": {
+        "splitAt": "",
+        "trim": false
+      },
+      "technology": "JAVA",
+      "methods": [
+        {
+          "method": {
+            "visibility": "PUBLIC",
+            "modifiers": [],
+            "className": "wt.servlet.HttpServletRequestWrapper",
+            "methodName": "getRemoteUser",
+            "argumentTypes": [],
+            "returnType": "java.lang.String"
+          },
+          "capture": "ARGUMENT",
+          "argumentIndex": 0
+        }
+      ],
+      "scope": {}
+    },
+    {
+      "enabled": true,
+      "source": "METHOD_PARAM",
+      "valueProcessing": {
+        "splitAt": "",
+        "trim": false
+      },
+      "technology": "JAVA",
+      "methods": [
+        {
+          "method": {
+            "visibility": "PUBLIC",
+            "modifiers": [],
+            "className": "com.ptc.netmarkets.util.beans.NmLoginBean",
+            "methodName": "getRemoteUser",
+            "argumentTypes": [],
+            "returnType": "java.lang.String"
+          },
+          "capture": "ARGUMENT",
+          "argumentIndex": 0
+        }
+      ],
+      "scope": {}
+    }
+  ],
+  "normalization": "ORIGINAL",
+  "aggregation": "FIRST",
+  "confidential": false,
+  "skipPersonalDataMasking": true
+}
