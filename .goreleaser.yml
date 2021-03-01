@@ -40,7 +40,8 @@ signs:
   args:
   - '-c'
   - 'echo "${artifact} is signed and I can prove it" | tee ${signature}'
-  artifacts: allrelease:
+  artifacts: all
+release:
   # If you want to manually examine the release before its live, uncomment this line:
   # draft: true
 changelog:
