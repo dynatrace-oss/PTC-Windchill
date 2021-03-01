@@ -30,6 +30,7 @@ import (
 	"regexp"
 	"sort"
 	"strings"
+	"time"
 )
 
 const rootDir = filename("assets")
@@ -108,13 +109,13 @@ func (p *Processor) Process() error {
 			return fmt.Errorf("Endpoint URL not found for %v", dir)
 		}
 
-		//Sleeping for a second because sometimes the DT cluster takes time to register the existence of a newly created object
-		//time.Sleep(3 * time.Second)
 		for _, file := range files {
+			//Sleeping for a second because sometimes the DT cluster takes time to register the existence of a newly created object
+			time.Sleep(2 * time.Second)
 			endpointURL := p.Config.URL + endpoint
-			if p.Config.Verbose {
-				log.Println("==== " + rootDir.Join("/", dir, file) + " ====")
-			}
+			//if p.Config.Verbose {
+			log.Println("==== " + rootDir.Join("/", dir, file) + " ====")
+			//}
 			if endpointName == "Extensions" {
 				if err = p.sendExtensionFile(endpointURL, rootDir.Join(dir, file)); err != nil {
 					return err
