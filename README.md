@@ -42,5 +42,5 @@ POST | /api/config/v1/dashboards | 11-Dashboards
 ### Troubleshooting
 Please open new issues if you encounter problems in uploading the components to Dynatrace or if there are missing functionalities for the PTC Windchill pack.
 
-
+### Contact
 Please reach out to PTC@dynatrace.com for assistance with deploying the starter set or for any questions/concerns
