@@ -110,7 +110,7 @@ func (p *Processor) Process() error {
 		}
 
 		//Sleeping for a second because sometimes the DT cluster takes time to register the existence of a newly created object
-		if endpointName == "CalculatedMetrics" {
+		if endpointName == "MetricsService" {
 			time.Sleep(6 * time.Second)
 		}
 		for _, file := range files {
