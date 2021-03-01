@@ -109,9 +109,11 @@ func (p *Processor) Process() error {
 			return fmt.Errorf("Endpoint URL not found for %v", dir)
 		}
 
+		//Sleeping for a second because sometimes the DT cluster takes time to register the existence of a newly created object
+		if endpointName == "CalculatedMetrics" {
+			time.Sleep(6 * time.Second)
+		}
 		for _, file := range files {
-			//Sleeping for a second because sometimes the DT cluster takes time to register the existence of a newly created object
-			time.Sleep(2 * time.Second)
 			endpointURL := p.Config.URL + endpoint
 			//if p.Config.Verbose {
 			log.Println("==== " + rootDir.Join("/", dir, file) + " ====")
