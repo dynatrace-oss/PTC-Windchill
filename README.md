@@ -17,11 +17,13 @@ The API Token needs to have these minimum permissions:
 All the relevant files required to create Dynatrace objects are in **assets** directory. Under this directory, subfolders are available to create the relevant objects in Dynatrace. For example, all the files to create different dashboards are under Dashboards directory. Each subfolder is prefixed by a numeric value to show the order in which these objects need to be created. Since ManagementZones are created first, it is named as 01-ManagementZones. 
 
 There are 2 ways to create PTC related components to your Dynatrace tenant
-### Utility Tool
+### 1. Utility Tool
 
-You can [download](https://github.com/dynatrace-oss/PTC-Windchill/releases/latest) the utility to upload all the conponents. You will require Dynatrace tenant URL and the token for this utility to work.
+A utility tool is available to upload all the assets to the Dynatrace tenant. In order to use the utility:
+* Clone or download this repo. 
+* [Download](https://github.com/dynatrace-oss/PTC-Windchill/releases/latest) the utility for your OS. Unzip the file. Move the file PTC-Windchill_x.x.x to root of your cloned directory and run it. You will need Dynatrace tenant URL and the token for this utility to work.
 
-### Manually upload the components
+### 2. Manually upload the components
 * Please use any tool of your convenience (Postman, curl etc.) to make POST REST call to your Dynatrace tenant. Please use the tool of your choice to apply REST calls for all the files in a given subfolder.
 
   
@@ -36,3 +38,8 @@ POST | /api/config/v1/calculatedMetrics/service | 06-MetricsService |
 POST | /api/config/v1/service/customServices/java?position=APPEND | 07-CustomServices |
 POST | /api/config/v1/extensions | 08-Extensions | Extensions require uploading of the zip file. 
 POST | /api/config/v1/dashboards | 11-Dashboards
+
+### Troubleshooting
+Please open new issues if you encounter problems in uploading the components to Dynatrace or if there are missing functionalities for the PTC Windchill pack.
+
+
