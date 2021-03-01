@@ -19,7 +19,7 @@ All the relevant files required to create Dynatrace objects are in **assets** di
 There are 2 ways to create PTC related components to your Dynatrace tenant
 ### Utility Tool
 
-You can [Download](https://github.com/dynatrace-oss/PTC-Windchill/releases/latest) the utility to upload all the conponents. You will require Dynatrace tenant URL and the token for this utility to work.
+You can [download](https://github.com/dynatrace-oss/PTC-Windchill/releases/latest) the utility to upload all the conponents. You will require Dynatrace tenant URL and the token for this utility to work.
 
 ### Manually upload the components
 * Please use any tool of your convenience (Postman, curl etc.) to make POST REST call to your Dynatrace tenant. Please use the tool of your choice to apply REST calls for all the files in a given subfolder.
