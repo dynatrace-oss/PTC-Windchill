@@ -5,7 +5,7 @@
     ],
     "clusterVersion": "1.210.92.20210209-151321"
   },
-  "applicationIdentifier": "{id}",
+  "applicationIdentifier": "{application.id}",
   "filterConfig": {
     "pattern": "Windchill",
     "applicationMatchType": "CONTAINS",
