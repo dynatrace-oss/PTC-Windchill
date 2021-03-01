@@ -4,10 +4,11 @@
     },
     "dashboardMetadata": {
         "name": "PTC Windchill-User Data",
-        "shared": false,
+        "shared": true,
+        "owner": "Dynatrace",
         "sharingDetails": {
-            "linkShared": true,
-            "published": false
+          "linkShared": true,
+          "published": true
         },
         "dashboardFilter": {
             "timeframe": "",
