@@ -41,7 +41,7 @@ var fileNameFormat = regexp.MustCompile("(^\\d+[-].+)")
 
 var endpoints = Endpoints{
 	"Dashboards":              "/api/config/v1/dashboards",
-	"DashboardSharingDetails": "/api/config/v1/dashboards/{id}/shareSetting",
+	"DashboardSharingDetails": "/dashboards/{id}/shareSettings",
 	"MetricsService":          "/api/config/v1/calculatedMetrics/service",
 	"Application":             "/api/config/v1/applications/web",
 	"DetectionRules":          "/api/config/v1/applicationDetectionRules",
