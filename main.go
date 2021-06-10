@@ -135,7 +135,7 @@ func (p *Processor) Process() error {
 			}
 
 			if endpointName == "Dashboards" {
-				time.Sleep(10 * time.Second)
+				time.Sleep(30 * time.Second)
 				if p.Config.Verbose {
 					log.Println("Sending sharing data")
 				}
