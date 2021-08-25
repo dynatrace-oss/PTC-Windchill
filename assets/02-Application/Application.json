@@ -1,9 +1,9 @@
 {
   "metadata": {
     "configurationVersions": [
-      25
+      26
     ],
-    "clusterVersion": "1.211.90.20210216-141629"
+    "clusterVersion": "1.224.74.20210819-170543"
   },
   "name": "PTC Windchill",
   "type": "AUTO_INJECTED",
@@ -11,8 +11,10 @@
   "costControlUserSessionPercentage": 100,
   "loadActionKeyPerformanceMetric": "VISUALLY_COMPLETE",
   "sessionReplayConfig": {
-    "enabled": true,
-    "costControlPercentage": 100
+    "enabled": false,
+    "costControlPercentage": 100,
+    "enableCssResourceCapturing": true,
+    "cssResourceCapturingExclusionRules": []
   },
   "xhrActionKeyPerformanceMetric": "VISUALLY_COMPLETE",
   "loadActionApdexSettings": {
@@ -71,8 +73,8 @@
       },
       "visuallyCompleteAndSpeedIndex": true,
       "visuallyComplete2Settings": {
-        "imageUrlBlacklist": "",
-        "mutationBlacklist": "",
+        "excludeUrlRegex": "",
+        "ignoredMutationsList": "",
         "mutationTimeout": 50,
         "inactivityTimeout": 1000,
         "threshold": 50
@@ -145,7 +147,7 @@
             "type": "SUBSTRING",
             "patternBefore": "/Windchill/app/#ptc1",
             "patternBeforeSearchType": "FIRST",
-            "patternAfter": "",
+            "patternAfter": "?",
             "patternAfterSearchType": "LAST",
             "replacement": null,
             "patternToReplace": null,
@@ -163,24 +165,182 @@
         "processingSteps": [],
         "metadataId": 2,
         "useGuessedElementIdentifier": false
+      },
+      {
+        "name": "TrailingURLWhiteSpace",
+        "input": "PAGE_URL",
+        "processingPart": "ALL",
+        "processingSteps": [
+          {
+            "type": "SUBSTRING",
+            "patternBefore": "/Windchill/app/#ptc1",
+            "patternBeforeSearchType": "FIRST",
+            "patternAfter": "",
+            "patternAfterSearchType": "LAST",
+            "replacement": null,
+            "patternToReplace": null,
+            "regularExpression": null,
+            "fallbackToInput": false
+          }
+        ],
+        "metadataId": null,
+        "useGuessedElementIdentifier": false
       }
     ],
     "loadActionNamingRules": [
       {
-        "template": "Loading of {pageTitle (default)}",
-        "conditions": []
+        "template": "loading of page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{pageUrlPath (default)}",
+            "operand2": "/windchill/app/",
+            "operator": "CONTAINS"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "loading of page {TrailingURLWhiteSpace}",
+        "conditions": [],
+        "useOrConditions": false
       }
     ],
     "xhrActionNamingRules": [
       {
-        "template": "{pageTitle (default)}",
-        "conditions": []
+        "template": "{userInteraction (default)} on \"search\" on page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "/Windchill/netmarkets/jsp/search/validateSearch.jsp",
+            "operator": "EQUALS"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "{userInteraction (default)} on \"related objects\" on page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "/Windchill/ptc1/tgt/distributionList",
+            "operator": "CONTAINS"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "upload document on page {pageUrlPath (default)}",
+        "conditions": [
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "/Windchill/servlet/GetCacheDescriptorServlet",
+            "operator": "CONTAINS"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "{userInteraction (default)} on \"open representation in creo view\" on page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "getOpenInCreoViewServiceCustomURI",
+            "operator": "CONTAINS"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "{userInteraction (default)} on \"[object details]\" on page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{pageUrlAnchor (default)}",
+            "operand2": "ptc1/tcomp/infoPage",
+            "operator": "CONTAINS"
+          },
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "/Windchill/ptc1/WTProperties/",
+            "operator": "EQUALS"
+          },
+          {
+            "operand1": "{elementIdentifier (default)}",
+            "operand2": "[a-zA-Z\\s]*",
+            "operator": "NOT_MATCHES_REGULAR_EXPRESSION"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "{userInteraction (default)} on \"[Object Details]\" on page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "/Windchill/ptc1/tcomp/infoPage",
+            "operator": "STARTS_WITH"
+          },
+          {
+            "operand1": "{TrailingURL}",
+            "operand2": null,
+            "operator": "IS_NOT_EMPTY"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "{userInteraction (default)} on \"[Saved Search]\" on page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "/Windchill/netmarkets/jsp/search/search.jsp",
+            "operator": "STARTS_WITH"
+          },
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "wt.query.SearchHistory",
+            "operator": "CONTAINS"
+          },
+          {
+            "operand1": "{xhrUrl (default)}",
+            "operand2": "fireSearch=true",
+            "operator": "CONTAINS"
+          },
+          {
+            "operand1": "{TrailingURL}",
+            "operand2": null,
+            "operator": "IS_NOT_EMPTY"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "{userInteraction (default)} on \"{elementIdentifier (default)}\" on page {TrailingURL}",
+        "conditions": [
+          {
+            "operand1": "{TrailingURL}",
+            "operand2": null,
+            "operator": "IS_NOT_EMPTY"
+          }
+        ],
+        "useOrConditions": false
+      },
+      {
+        "template": "{userInteraction (default)} on \"{elementIdentifier (default)}\" on page {pageUrlPath (default)}",
+        "conditions": [],
+        "useOrConditions": false
       }
     ],
     "customActionNamingRules": [],
     "ignoreCase": true,
     "useFirstDetectedLoadAction": true,
-    "splitUserActionsByDomain": true
+    "splitUserActionsByDomain": true,
+    "queryParameterCleanups": [
+      "cfid",
+      "phpsessid",
+      "__sid",
+      "cftoken",
+      "sid"
+    ]
   },
   "metaDataCaptureSettings": [
     {
@@ -188,14 +348,16 @@
       "capturingName": "PTC.navigation.GLOBAL_USER",
       "name": "VisitTag0",
       "uniqueId": 1,
-      "publicMetadata": false
+      "publicMetadata": false,
+      "useLastValue": false
     },
     {
       "type": "CSS_SELECTOR",
       "capturingName": "#infoPageIdentityObjectIdentifier",
       "name": "PageIdentity",
       "uniqueId": 2,
-      "publicMetadata": false
+      "publicMetadata": false,
+      "useLastValue": false
     }
   ],
   "conversionGoals": []

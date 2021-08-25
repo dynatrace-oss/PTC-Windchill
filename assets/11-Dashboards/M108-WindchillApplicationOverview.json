@@ -1,9 +1,9 @@
 {
   "metadata": {
     "configurationVersions": [
-      3
+      5
     ],
-    "clusterVersion": "1.210.92.20210209-151321"
+    "clusterVersion": "1.224.74.20210819-170543"
   },
   "dashboardMetadata": {
     "name": "M108 - Windchill Application Overview",
@@ -12,7 +12,7 @@
     "sharingDetails": {
       "linkShared": true,
       "published": true
-    },
+    },  
     "dashboardFilter": {
       "timeframe": null,
       "managementZone": {
@@ -171,55 +171,13 @@
       }
     },
     {
-      "name": "",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 646,
-        "left": 0,
-        "width": 684,
-        "height": 304
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": {
-          "id": "3584446464239752399",
-          "name": "PTC"
-        }
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "Top SQL Statements",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "calc:service.topsqlstatements",
-              "aggregation": "NONE",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "SERVICE",
-              "dimensions": [],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
-      }
-    },
-    {
       "name": "Custom chart",
       "tileType": "CUSTOM_CHARTING",
       "configured": true,
       "bounds": {
         "top": 646,
-        "left": 684,
-        "width": 760,
+        "left": 0,
+        "width": 1444,
         "height": 304
       },
       "tileFilter": {
