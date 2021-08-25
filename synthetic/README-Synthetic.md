@@ -1,0 +1,11 @@
+## PTC-Windchill Synthetic Monitors
+Example use cases of synthetic monitors are available in the PTC-Windchill/synthetic directory and detailed information on each monitor is noted below.
+In addition to the examples, it is recommended to create a monitor that navigates through critical workflows in Windchill.
+
+Due to the differences in authentication and domain/URLs, the examples are not included in the utility tool and require manual deployment/configuration. If you require assistance, please reach out to your Dynatrace account team or PTC@dynatrace.com.
+
+Monitor Name | Description | Notes
+------------ | ------------- | ------------- 
+Windchill File Server Download Check | Tests the availability of a file on a remote file server. <BR><BR>Steps: Load document page, download file by clicking on the pdf icon next to the filename, verify domain |  All authentication and domain/URLs have been removed from the script. Please add the required values or re-record and manually add the Javascript events. Removed values can be found by searching for "URLREMOVED.COM" and "DOMAINREMOVED". <BR><BR>Create a test user for each remote file server location.
+Windchill Queue Check | Checks if any queues are above a specific threshold for severe/failed entries (Default: 10) <BR><BR>Steps: Load queue management page, sort on Severe/Failed Entries, parse Severe/Failed Entries column for threshold violation - fail script on threshold violation | All authentication and domains have been removed from the script. Please add the required values or re-record and manually add the Javascript events. Removed values can be found by searching for "DOMAINREMOVED.COM". <BR><BR>Threshold can be changed in the last Javascript event under the threshold variable.
+Windchill Server Status | Checks that the Windchill Directory Server and File Servers are 'Available' under the server status page <BR><BR>Steps: Load server status page - validate Windchill Directory Server and File Servers value are 'Available' | All authentication and domains have been removed from the script. Please add the required values or re-record and manually add the validation. Removed values can be found by searching for "DOMAINREMOVED.COM".
