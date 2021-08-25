@@ -1,0 +1,83 @@
+{
+  "name": "Windchill Server Status",
+  "frequencyMin": 60,
+  "enabled": false,
+  "type": "BROWSER",
+  "script": {
+    "type": "clickpath",
+    "version": "1.0",
+    "configuration": {
+      "device": {
+        "deviceName": "Desktop",
+        "orientation": "landscape"
+      },
+      "disableWebSecurity": false
+    },
+    "events": [
+      {
+        "type": "navigate",
+        "description": "Loading of Server Status page",
+        "validate": [
+          {
+            "type": "element_match",
+            "match": "",
+            "isRegex": false,
+            "failIfFound": false,
+            "target": {
+              "locators": [
+                {
+                  "type": "css",
+                  "value": "a[href=\"#WindchillDS\"]:contains(\"Available\")"
+                }
+              ]
+            }
+          },
+          {
+            "type": "element_match",
+            "match": "",
+            "isRegex": false,
+            "failIfFound": false,
+            "target": {
+              "locators": [
+                {
+                  "type": "css",
+                  "value": "a[href=\"#WindchillDS\"]:contains(\"Available\")"
+                }
+              ]
+            }
+          }
+        ],
+        "url": "https://DOMAINREMOVED.COM/Windchill/wtcore/jsp/jmx/serverStatus.jsp",
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      }
+    ]
+  },
+  "locations": [
+    "GEOLOCATION-2340C2C253B92657"
+  ],
+  "anomalyDetection": {
+    "outageHandling": {
+      "globalOutage": true,
+      "localOutage": false,
+      "localOutagePolicy": {
+        "affectedLocations": null,
+        "consecutiveRuns": null
+      },
+      "retryOnError": true
+    },
+    "loadingTimeThresholds": {
+      "enabled": false,
+      "thresholds": []
+    }
+  },
+  "tags": [],
+  "managementZones": [],
+  "automaticallyAssignedApps": [],
+  "manuallyAssignedApps": [],
+  "keyPerformanceMetrics": {
+    "loadActionKpm": "VISUALLY_COMPLETE",
+    "xhrActionKpm": "VISUALLY_COMPLETE"
+  }
+}
