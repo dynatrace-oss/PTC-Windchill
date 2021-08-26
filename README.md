@@ -16,7 +16,7 @@ The API Token needs to have these minimum permissions:
 
 All the relevant files required to create Dynatrace objects are in the **assets** directory. Under this directory, subfolders are available to create the relevant objects in Dynatrace. For example, all the files to create different dashboards are under Dashboards directory. Each subfolder is prefixed by a numeric value to show the order in which these objects need to be created. Since ManagementZones are created first, it is named as 01-ManagementZones. Note that some dashboards may require minor configuration after deployment - such as filtering a tile to a particular process group.
 
-Example synthetic monitors are available in the **synthetic** directory, please refer to the [README-Synthetic.md](https://github.com/dynatrace-oss/PTC-Windchill/tree/main/synthetic/README-Synthetic.md).
+Example synthetic monitors are available in the **synthetic** directory, please refer to the [README-Synthetic.md](https://github.com/dynatrace-oss/PTC-Windchill/tree/main/synthetic/README-Synthetic.md) - examples include remote file server, queue and server status monitors.
 
 There are 2 ways to create PTC related components to your Dynatrace tenant
 ### 1. Utility Tool
