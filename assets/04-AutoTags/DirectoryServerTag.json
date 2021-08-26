@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      7
+    ],
+    "clusterVersion": "1.224.76.20210824-135737"
+  },
+  "name": "DirectoryServer",
+  "rules": [
+    {
+      "type": "PROCESS_GROUP",
+      "enabled": true,
+      "valueFormat": null,
+      "propagationTypes": [],
+      "conditions": [
+        {
+          "key": {
+            "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+            "dynamicKey": "JAVA_MAIN_CLASS",
+            "type": "PROCESS_PREDEFINED_METADATA_KEY"
+          },
+          "comparisonInfo": {
+            "type": "STRING",
+            "operator": "CONTAINS",
+            "value": "DirectoryServer",
+            "negate": false,
+            "caseSensitive": false
+          }
+        }
+      ]
+    }
+  ],
+}
