@@ -1,141 +1,221 @@
 {
-    "metadata": {
-        "configurationVersions": [3]
+  "metadata": {
+    "configurationVersions": [
+      5
+    ],
+    "clusterVersion": "1.224.76.20210824-135737"
+  },
+  "dashboardMetadata": {
+    "name": "PTC Windchill - User Data",
+    "shared": true,
+    "owner": "Dynatrace",
+    "dashboardFilter": null,
+    "preset": true
+  },
+  "tiles": [
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 874,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "User sessions query results",
+      "query": "SELECT distinct(userId), count(*) FROM usersession GROUP BY userId",
+      "type": "COLUMN_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      },
+      "limit": 50
     },
-    "dashboardMetadata": {
-        "name": "PTC Windchill-User Data",
-        "shared": true,
-        "owner": "Dynatrace",
-        "sharingDetails": {
-          "linkShared": true,
-          "published": true
-        },
-        "dashboardFilter": {
-            "timeframe": "",
-            "managementZone": {
-                "id": "{managementzones.id}",
-                "name": "PTC"
-            }
-        }
+    {
+      "name": "User behavior",
+      "tileType": "SESSION_METRICS",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 874,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "assignedEntities": [
+        "APPLICATION-681D2E7F8A1E0E96"
+      ]
     },
-    "tiles": [{
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 0,
-            "width": 304,
-            "height": 304
-        },
-        "tileFilter": {},
-        "customName": "User sessions query results",
-        "query": "SELECT distinct(userId), count(*) FROM usersession GROUP BY userId",
-        "type": "COLUMN_CHART",
-        "visualizationConfig": {
-            "hasAxisBucketing": false
-        },
-        "limit": 50
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 608,
-            "width": 456,
-            "height": 304
-        },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "ActiveUserCount",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "TIMESERIES",
-                "series": [{
-                    "metric": "ext:custom.jmx.ActiveUsers.metric_ActiveUserCount_1000",
-                    "aggregation": "AVG",
-                    "type": "LINE",
-                    "entityType": "PROCESS_GROUP_INSTANCE",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+    {
+      "name": "Key user action overview",
+      "tileType": "UEM_KEY_USER_ACTIONS",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 874,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "assignedEntities": [
+        "APPLICATION-681D2E7F8A1E0E96"
+      ]
+    },
+    {
+      "name": "TotalActiveUserCount",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalActiveUserCount",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.ActiveUsers.metric_TotalActiveUserCount_1607449783133",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 304,
-            "width": 304,
-            "height": 304
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "BLUE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": true
         },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "TotalActiveUserCount",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "ext:custom.jmx.ActiveUsers.metric_TotalActiveUserCount_1000",
-                    "aggregation": "AVG",
-                    "type": "LINE",
-                    "entityType": "PROCESS_GROUP_INSTANCE",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {},
-                "leftAxisCustomUnit": "Count"
-            },
-            "filtersPerEntityType": {}
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "User behavior",
-        "tileType": "SESSION_METRICS",
-        "configured": true,
-        "bounds": {
-            "top": 304,
-            "left": 0,
-            "width": 304,
-            "height": 304
+      }
+    },
+    {
+      "name": "ActiveUserCount",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 304,
+        "width": 570,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "ActiveUserCount",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.ActiveUsers.metric_ActiveUserCount_1607449605485",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "GREEN",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
-        "tileFilter": {},
-        "assignedEntities": ["{application.id}"]
-    }, {
-        "name": "Key user action overview",
-        "tileType": "UEM_KEY_USER_ACTIONS",
-        "configured": true,
-        "bounds": {
-            "top": 304,
-            "left": 304,
-            "width": 304,
-            "height": 304
-        },
-        "tileFilter": {},
-        "assignedEntities": ["{application.id}"]
-    }, {
-        "name": "Key user action",
-        "tileType": "DEM_KEY_USER_ACTION",
-        "configured": false,
-        "bounds": {
-            "top": 304,
-            "left": 608,
-            "width": 304,
-            "height": 304
-        },
-        "tileFilter": {},
-        "assignedEntities": []
-    }]
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    }
+  ]
 }

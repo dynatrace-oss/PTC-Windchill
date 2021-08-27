@@ -1,22 +1,16 @@
 {
   "metadata": {
     "configurationVersions": [
-      3
+      5
     ],
-    "clusterVersion": "1.210.92.20210209-151321"
+    "clusterVersion": "1.224.76.20210824-135737"
   },
   "dashboardMetadata": {
     "name": "M201 - HOST Windchill Monitoring",
     "shared": true,
     "owner": "Dynatrace",
-    "sharingDetails": {
-      "linkShared": true,
-      "published": true
-    },
-    "dashboardFilter": {
-      "timeframe": "-2h",
-      "managementZone": null
-    }
+    "dashboardFilter": null,
+    "preset": true
   },
   "tiles": [
     {
@@ -34,6 +28,7 @@
         "managementZone": null
       },
       "assignedEntities": [
+        "APPLICATION-681D2E7F8A1E0E96",
         "GEOLOCATION-0000000000000000",
         "WORLD"
       ],
@@ -101,7 +96,7 @@
         "managementZone": null
       },
       "assignedEntities": [
-        "SERVICE-9E7937A49699DC11"
+        "SERVICE-DFC72BC4F17E07F4"
       ]
     },
     {
@@ -115,11 +110,11 @@
         "height": 304
       },
       "tileFilter": {
-        "timeframe": "-30m",
+        "timeframe": null,
         "managementZone": null
       },
       "assignedEntities": [
-        "SERVICE-429BE187286BF98E"
+        "SERVICE-9E7937A49699DC11"
       ]
     },
     {
@@ -133,7 +128,7 @@
         "height": 190
       },
       "tileFilter": {
-        "timeframe": "Last 2 hours",
+        "timeframe": null,
         "managementZone": null
       },
       "filterConfig": null,
@@ -150,11 +145,11 @@
         "height": 304
       },
       "tileFilter": {
-        "timeframe": "Last 2 hours",
+        "timeframe": null,
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-90CE01F27D579187"
+        "APPLICATION-681D2E7F8A1E0E96"
       ]
     },
     {
@@ -168,75 +163,12 @@
         "height": 304
       },
       "tileFilter": {
-        "timeframe": "Last 2 hours",
+        "timeframe": null,
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-90CE01F27D579187"
+        "APPLICATION-681D2E7F8A1E0E96"
       ]
-    },
-    {
-      "name": "",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 38,
-        "left": 798,
-        "width": 608,
-        "height": 266
-      },
-      "tileFilter": {
-        "timeframe": "Last 2 hours",
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "User actions per minute",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "builtin:apps.other.uaCount.osAndVersion",
-              "aggregation": "NONE",
-              "percentile": null,
-              "type": "AREA",
-              "entityType": "MONITORED_ENTITY˟DEVICE_APPLICATION",
-              "dimensions": [],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "MINUTE"
-            },
-            {
-              "metric": "builtin:apps.web.actionCount.category",
-              "aggregation": "NONE",
-              "percentile": null,
-              "type": "AREA",
-              "entityType": "APPLICATION",
-              "dimensions": [],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "MINUTE"
-            }
-          ],
-          "resultMetadata": {
-            "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
-              "lastModified": 1592937616228,
-              "customColor": "#edd148"
-            },
-            "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
-              "lastModified": 1592937317653,
-              "customColor": "#dc172a"
-            },
-            "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
-              "lastModified": 1592937309469,
-              "customColor": "#2ab06f"
-            }
-          }
-        },
-        "filtersPerEntityType": {}
-      }
     },
     {
       "name": "Database health",
@@ -250,10 +182,7 @@
       },
       "tileFilter": {
         "timeframe": null,
-        "managementZone": {
-          "id": "all",
-          "name": "All"
-        }
+        "managementZone": null
       },
       "filterConfig": null,
       "chartVisible": true
@@ -269,7 +198,7 @@
         "height": 152
       },
       "tileFilter": {
-        "timeframe": "Last 2 hours",
+        "timeframe": null,
         "managementZone": null
       },
       "assignedEntities": [
@@ -302,7 +231,7 @@
         "height": 190
       },
       "tileFilter": {
-        "timeframe": "Last 2 hours",
+        "timeframe": null,
         "managementZone": null
       },
       "filterConfig": null,
@@ -319,11 +248,11 @@
         "height": 304
       },
       "tileFilter": {
-        "timeframe": "Last 2 hours",
+        "timeframe": null,
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-90CE01F27D579187"
+        "APPLICATION-681D2E7F8A1E0E96"
       ]
     },
     {
@@ -338,10 +267,7 @@
       },
       "tileFilter": {
         "timeframe": null,
-        "managementZone": {
-          "id": "all",
-          "name": "All"
-        }
+        "managementZone": null
       }
     },
     {
@@ -357,7 +283,9 @@
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
+      },
+      "problemSelector": null,
+      "entitySelector": null
     },
     {
       "name": "JavaScript errors",
@@ -374,8 +302,101 @@
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-90CE01F27D579187"
+        "APPLICATION-681D2E7F8A1E0E96"
       ]
+    },
+    {
+      "name": "User actions per minute",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 798,
+        "width": 608,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:apps.web.actionCount.category",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": null,
+          "filterBy": null,
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "builtin:apps.other.uaCount.osAndApdex",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": null,
+          "filterBy": null,
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "BLUE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "AREA"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "AREA"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
     }
   ]
 }

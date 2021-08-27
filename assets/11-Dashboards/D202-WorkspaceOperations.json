@@ -1,19 +1,21 @@
- {
+{
   "metadata": {
     "configurationVersions": [
-      3
+      5
     ],
-    "clusterVersion": "1.212.88.20210305-151445"
+    "clusterVersion": "1.224.76.20210824-135737"
   },
   "dashboardMetadata": {
     "name": "D202 - Workspace Operations",
     "shared": true,
-    "owner": "Dynatrace"
+    "owner": "Dynatrace",
+    "dashboardFilter": null,
+    "preset": true
   },
   "tiles": [
     {
-      "name": "",
-      "tileType": "CUSTOM_CHARTING",
+      "name": "ActionNameByUser",
+      "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
         "top": 38,
@@ -21,36 +23,60 @@
         "width": 950,
         "height": 570
       },
-      "tileFilter": {},
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "ActionNameByUser",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TOP_LIST",
-          "series": [
-            {
-              "metric": "calc:service.actionnamebyuser",
-              "aggregation": "AVG",
-              "type": "LINE",
-              "entityType": "SERVICE",
-              "dimensions": [
-                {
-                  "id": "1",
-                  "name": "Dimension",
-                  "values": [],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "ActionNameByUser",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "calc:service.actionnamebyuser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Dimension"
           ],
-          "resultMetadata": {}
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": null,
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
-        "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     }
   ]
