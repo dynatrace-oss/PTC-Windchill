@@ -1,6 +1,7 @@
 # PTC-Windchill
 This repo contains files that are required to create assets in a Dynatrace tenant including an application, metrics, dashboards and synthetic to monitor PTC Windchill.
 In order to create these entities in Dynatrace, you would need 2 items:
+
 Name | Description
 ------------ | -------------
 Dynatrace tenant url | `Managed` https://{your-domain}/e/{your-environment-id}  <br/>`SaaS` https://{your-environment-id}.live.dynatrace.com
