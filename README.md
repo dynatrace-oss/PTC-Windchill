@@ -1,6 +1,7 @@
 # PTC-Windchill
-This repo contains files that are required to create assets in Dynatrace tenant including an application, metrics and dashboards to monitor PTC Windchill.
+This repo contains files that are required to create assets in a Dynatrace tenant including an application, metrics, dashboards and synthetic to monitor PTC Windchill.
 In order to create these entities in Dynatrace, you would need 2 items:
+
 Name | Description
 ------------ | -------------
 Dynatrace tenant url | `Managed` https://{your-domain}/e/{your-environment-id}  <br/>`SaaS` https://{your-environment-id}.live.dynatrace.com
@@ -14,7 +15,9 @@ The API Token needs to have these minimum permissions:
 
 ![GitHub Logo](/images/TokenPermissions.png)
 
-All the relevant files required to create Dynatrace objects are in **assets** directory. Under this directory, subfolders are available to create the relevant objects in Dynatrace. For example, all the files to create different dashboards are under Dashboards directory. Each subfolder is prefixed by a numeric value to show the order in which these objects need to be created. Since ManagementZones are created first, it is named as 01-ManagementZones. 
+All the relevant files required to create Dynatrace objects are in the **assets** directory. Under this directory, subfolders are available to create the relevant objects in Dynatrace. For example, all the files to create different dashboards are under Dashboards directory. Each subfolder is prefixed by a numeric value to show the order in which these objects need to be created. Since ManagementZones are created first, it is named as 01-ManagementZones. Note that some dashboards may require minor configuration after deployment - such as filtering a tile to a particular process group.
+
+Example synthetic monitors are available in the **synthetic** directory, please refer to the [README-Synthetic.md](https://github.com/dynatrace-oss/PTC-Windchill/tree/main/synthetic/README-Synthetic.md) - examples include remote file server, queue and server status monitors.
 
 There are 2 ways to create PTC related components to your Dynatrace tenant
 ### 1. Utility Tool

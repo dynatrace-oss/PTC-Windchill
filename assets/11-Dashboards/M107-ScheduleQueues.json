@@ -1,210 +1,31 @@
 {
   "metadata": {
     "configurationVersions": [
-      3
+      5
     ],
-    "clusterVersion": "1.210.92.20210209-151321"
+    "clusterVersion": "1.224.76.20210824-135737"
   },
   "dashboardMetadata": {
-    "name": "M107- Schedule Queues",
+    "name": "M107 - Schedule Queues",
     "shared": true,
     "owner": "Dynatrace",
-    "sharingDetails": {
-      "linkShared": true,
-      "published": true
-    },
-    "dashboardFilter": null
+    "dashboardFilter": null,
+    "preset": true
   },
   "tiles": [
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 76,
-        "left": 0,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "WfScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "WfScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "WfScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
-      }
-    },
     {
       "name": "WfScheduleQueue",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 38,
-        "left": 152,
-        "width": 304,
+        "top": 0,
+        "left": 114,
+        "width": 266,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
-    },
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 76,
-        "left": 608,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "RevaultingQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "RevaultingQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "RevaultingQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
       }
     },
     {
@@ -212,102 +33,14 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 38,
-        "left": 798,
-        "width": 304,
+        "top": 0,
+        "left": 608,
+        "width": 266,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
-    },
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 76,
-        "left": 1216,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "commonScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "commonScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "commonScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
       }
     },
     {
@@ -315,102 +48,14 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 38,
-        "left": 1330,
-        "width": 380,
+        "top": 0,
+        "left": 1026,
+        "width": 304,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
-    },
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 494,
-        "left": 0,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "NotificationScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "NotificationScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "NotificationScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
       }
     },
     {
@@ -418,102 +63,14 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 456,
+        "top": 418,
         "left": 76,
-        "width": 380,
+        "width": 342,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
-    },
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 494,
-        "left": 608,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "EPPQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "EPPQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "EPPQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
       }
     },
     {
@@ -521,102 +78,14 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 456,
-        "left": 722,
-        "width": 380,
+        "top": 418,
+        "left": 608,
+        "width": 190,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
-    },
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 494,
-        "left": 1216,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "EMailQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "EMailQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "EMailQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
       }
     },
     {
@@ -624,102 +93,14 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 456,
-        "left": 1292,
-        "width": 380,
+        "top": 418,
+        "left": 1064,
+        "width": 190,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
-    },
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 912,
-        "left": 0,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "DigestNotificationQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "DigestNotificationQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "DigestNotificationQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
       }
     },
     {
@@ -727,102 +108,14 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 874,
-        "left": 38,
-        "width": 418,
+        "top": 836,
+        "left": 76,
+        "width": 342,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
-      }
-    },
-    {
-      "name": "Custom chart",
-      "tileType": "CUSTOM_CHARTING",
-      "configured": true,
-      "bounds": {
-        "top": 912,
-        "left": 608,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "filterConfig": {
-        "type": "MIXED",
-        "customName": "TotalEntries",
-        "defaultName": "Custom chart",
-        "chartConfig": {
-          "legendShown": true,
-          "type": "TIMESERIES",
-          "series": [
-            {
-              "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "BAR",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "WVSScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "WVSScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": false,
-              "aggregationRate": "TOTAL"
-            },
-            {
-              "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
-              "aggregation": "AVG",
-              "percentile": null,
-              "type": "LINE",
-              "entityType": "PROCESS_GROUP_INSTANCE",
-              "dimensions": [
-                {
-                  "id": "2",
-                  "name": "Name",
-                  "values": [
-                    "WVSScheduleQueue"
-                  ],
-                  "entityDimension": false
-                }
-              ],
-              "sortAscending": false,
-              "sortColumn": true,
-              "aggregationRate": "TOTAL"
-            }
-          ],
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": {}
       }
     },
     {
@@ -830,14 +123,1518 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 874,
-        "left": 798,
-        "width": 304,
+        "top": 836,
+        "left": 570,
+        "width": 266,
         "height": 38
       },
       "tileFilter": {
         "timeframe": null,
         "managementZone": null
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "WfScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "WfScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "WfScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "BLUE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 456,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "RevaultingQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "RevaultingQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "RevaultingQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "PURPLE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 912,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "commonScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "commonScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "commonScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "GREEN",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 912,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "EMailQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "EMailQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "EMailQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "GREEN",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 456,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "EPPQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "EPPQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "EPPQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "PURPLE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 0,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "NotificationScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "NotificationScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "NotificationScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "BLUE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 0,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "DigestNotificationQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "DigestNotificationQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "DigestNotificationQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "BLUE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 456,
+        "width": 456,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "TotalEntries",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.Queues.metric_TotalEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "WVSScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "ext:custom.jmx.Queues.metric_WaitingReadyEntries-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "WVSScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "ext:custom.jmx.Queues.metric_MaxEntryExecTimeSeconds-1",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Name"
+          ],
+          "sortBy": null,
+          "filterBy": {
+            "filter": null,
+            "globalEntity": null,
+            "filterType": null,
+            "filterOperator": "AND",
+            "entityAttribute": null,
+            "nestedFilters": [
+              {
+                "filter": "Name",
+                "globalEntity": null,
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "entityAttribute": null,
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "WVSScheduleQueue",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": null,
+          "metricSelector": null,
+          "foldTransformation": null,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "PURPLE",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": null,
+            "rules": [
+              {
+                "value": null,
+                "color": "#7dc540"
+              },
+              {
+                "value": null,
+                "color": "#f5d30f"
+              },
+              {
+                "value": null,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE",
+          "hasTrendline": null
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": null,
+              "seriesType": "COLUMN"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "color": null,
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     }
   ]

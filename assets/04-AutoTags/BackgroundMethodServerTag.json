@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      7
+    ],
+    "clusterVersion": "1.224.74.20210819-170543"
+  },
+  "name": "BackgroundMethodServer",
+  "rules": [
+    {
+      "type": "PROCESS_GROUP",
+      "enabled": true,
+      "valueFormat": null,
+      "propagationTypes": [],
+      "conditions": [
+        {
+          "key": {
+            "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+            "dynamicKey": "COMMAND_LINE_ARGS",
+            "type": "PROCESS_PREDEFINED_METADATA_KEY"
+          },
+          "comparisonInfo": {
+            "type": "STRING",
+            "operator": "CONTAINS",
+            "value": "Dwt.manager.serviceName=BackgroundMethodServer",
+            "negate": false,
+            "caseSensitive": false
+          }
+        }
+      ]
+    }
+  ],
+}

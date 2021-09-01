@@ -1,19 +1,16 @@
 {
   "metadata": {
     "configurationVersions": [
-      3
+      5
     ],
-    "clusterVersion": "1.210.92.20210209-151321"
+    "clusterVersion": "1.224.76.20210824-135737"
   },
   "dashboardMetadata": {
     "name": "M109 - HOST Health",
     "shared": true,
     "owner": "Dynatrace",
-    "sharingDetails": {
-      "linkShared": true,
-      "published": true
-    },
-    "dashboardFilter": null
+    "dashboardFilter": null,
+    "preset": true
   },
   "tiles": [
     {
@@ -22,8 +19,8 @@
       "configured": true,
       "bounds": {
         "top": 0,
-        "left": 228,
-        "width": 304,
+        "left": 304,
+        "width": 228,
         "height": 38
       },
       "tileFilter": {
@@ -38,7 +35,7 @@
       "bounds": {
         "top": 0,
         "left": 1026,
-        "width": 304,
+        "width": 152,
         "height": 38
       },
       "tileFilter": {
@@ -51,9 +48,9 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 380,
-        "left": 228,
-        "width": 304,
+        "top": 342,
+        "left": 304,
+        "width": 190,
         "height": 38
       },
       "tileFilter": {
@@ -66,9 +63,9 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 380,
-        "left": 1026,
-        "width": 304,
+        "top": 342,
+        "left": 988,
+        "width": 228,
         "height": 38
       },
       "tileFilter": {
@@ -81,9 +78,9 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 760,
-        "left": 266,
-        "width": 304,
+        "top": 684,
+        "left": 304,
+        "width": 190,
         "height": 38
       },
       "tileFilter": {
@@ -96,9 +93,9 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 760,
-        "left": 1026,
-        "width": 304,
+        "top": 684,
+        "left": 988,
+        "width": 228,
         "height": 38
       },
       "tileFilter": {
@@ -111,9 +108,9 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 1140,
-        "left": 228,
-        "width": 304,
+        "top": 1026,
+        "left": 304,
+        "width": 228,
         "height": 38
       },
       "tileFilter": {
@@ -126,9 +123,9 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 1140,
-        "left": 988,
-        "width": 304,
+        "top": 1026,
+        "left": 950,
+        "width": 266,
         "height": 38
       },
       "tileFilter": {
@@ -141,9 +138,9 @@
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 1520,
+        "top": 1368,
         "left": 684,
-        "width": 304,
+        "width": 190,
         "height": 38
       },
       "tileFilter": {
@@ -152,14 +149,14 @@
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
         "top": 38,
         "left": 38,
-        "width": 722,
-        "height": 342
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -175,9 +172,12 @@
           "splitBy": [
             "dt.entity.host"
           ],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.cpu.iowait:splitBy(dt.entity.host):avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -185,7 +185,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -195,18 +196,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
         "top": 38,
-        "left": 798,
-        "width": 722,
-        "height": 342
+        "left": 722,
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -220,9 +228,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.cpu.idle:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -230,7 +241,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -240,18 +252,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 418,
+        "top": 380,
         "left": 38,
-        "width": 722,
-        "height": 342
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -265,9 +284,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.cpu.system:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -275,7 +297,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -285,18 +308,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 418,
-        "left": 798,
-        "width": 722,
-        "height": 342
+        "top": 380,
+        "left": 722,
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -310,9 +340,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.cpu.usage:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -320,7 +353,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -330,18 +364,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 798,
+        "top": 722,
         "left": 38,
-        "width": 722,
-        "height": 342
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -355,9 +396,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.disk.usedPct:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -365,7 +409,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -375,18 +420,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 798,
-        "left": 798,
-        "width": 722,
-        "height": 342
+        "top": 722,
+        "left": 722,
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -400,9 +452,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.disk.free:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -410,7 +465,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -420,18 +476,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 1178,
+        "top": 1064,
         "left": 38,
-        "width": 722,
-        "height": 342
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -445,9 +508,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.mem.usage:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -455,7 +521,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -465,18 +532,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 1178,
-        "left": 798,
-        "width": 722,
-        "height": 342
+        "top": 1064,
+        "left": 722,
+        "width": 684,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -490,9 +564,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.mem.avail.pct:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -500,7 +577,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -510,18 +588,25 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     },
     {
-      "name": "Explorer results",
+      "name": "",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 1558,
+        "top": 1406,
         "left": 38,
-        "width": 1482,
-        "height": 380
+        "width": 1368,
+        "height": 304
       },
       "tileFilter": {
         "timeframe": null,
@@ -535,9 +620,12 @@
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
+          "sortBy": null,
           "filterBy": null,
-          "metricSelector": null,
-          "foldTransformation": null
+          "limit": 20,
+          "metricSelector": "builtin:host.cpu.load:splitBy():avg:auto:sort(value(avg,descending)):limit(20)",
+          "foldTransformation": null,
+          "enabled": true
         }
       ],
       "visualConfig": {
@@ -545,7 +633,8 @@
         "global": {
           "theme": "BLUE",
           "threshold": null,
-          "seriesType": "LINE"
+          "seriesType": "LINE",
+          "hasTrendline": null
         },
         "rules": [
           {
@@ -555,7 +644,14 @@
               "seriesType": "LINE"
             }
           }
-        ]
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": null,
+            "visible": true
+          },
+          "yAxes": []
+        }
       }
     }
   ]

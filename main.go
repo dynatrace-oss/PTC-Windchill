@@ -133,16 +133,17 @@ func (p *Processor) Process() error {
 			if id, err = p.post(endpointName, endpointURL, data); err != nil {
 				return err
 			}
-
-			if endpointName == "Dashboards" {
-				time.Sleep(10 * time.Second)
-				if p.Config.Verbose {
-					log.Println("Sending sharing data")
-				}
-				if err := p.sendSharingDetails(id); err != nil {
-					return err
-				}
-			}
+			
+			// Sharingdetails API no longer required, configuring dashboards as preset which are visible to all users by default.
+			// if endpointName == "Dashboards" {
+			// 	time.Sleep(10 * time.Second)
+			// 	if p.Config.Verbose {
+			// 		log.Println("Sending sharing data")
+			// 	}
+			// 	if err := p.sendSharingDetails(id); err != nil {
+			// 		return err
+			// 	}
+			// }
 
 		}
 	}

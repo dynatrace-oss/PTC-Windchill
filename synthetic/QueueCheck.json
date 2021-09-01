@@ -1,0 +1,92 @@
+{
+  "name": "Windchill Queue Check",
+  "frequencyMin": 60,
+  "enabled": false,
+  "type": "BROWSER",
+  "script": {
+    "type": "clickpath",
+    "version": "1.0",
+    "configuration": {
+      "device": {
+        "deviceName": "Desktop",
+        "orientation": "landscape"
+      },
+      "disableWebSecurity": false
+    },
+    "events": [
+      {
+        "type": "navigate",
+        "description": "Loading of \"https://DOMAINREMOVED.COM/Windchill/app/#ptc1/comp/queue.table\"",
+        "url": "https://DOMAINREMOVED.COM/Windchill/app/#ptc1/comp/queue.table",
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"Severe/Failed Entries\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "div:contains(\"Severe/Failed Entries\"):eq(23)"
+            }
+          ]
+        },
+        "button": 0
+      },
+      {
+        "type": "click",
+        "description": "click on \"Severe/Failed Entries\" (2)",
+        "validate": [
+          {
+            "type": "text_match",
+            "match": "Stopped",
+            "isRegex": false,
+            "failIfFound": true
+          }
+        ],
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "div:contains(\"Severe/Failed Entries\"):eq(23)"
+            }
+          ]
+        },
+        "button": 0
+      },
+      {
+        "type": "javascript",
+        "description": "Validate queues",
+        "javaScript": "var table = document.getElementsByClassName(\"x-grid3-body\")[0];\r\n\r\nvar queues = [];\r\nvar fail = 0;\r\nvar threshold = 10;\r\nfor (var i = 0; i < table.childElements().length; i++) {\r\n    tableChild = table.childElements();\r\n    for (var i = 0; i < table.childElements().length; i++) {\r\n\r\n        try {\r\n            console.log(tableChild[i].getElementsByTagName(\"td\")[1].getElementsByTagName(\"div\")[0].innerHTML);\r\n            console.log(tableChild[i].getElementsByTagName(\"td\")[9].getElementsByTagName(\"div\")[0].innerHTML);\r\n\r\n            var elem = tableChild[i].getElementsByTagName(\"td\")[9].getElementsByTagName(\"div\")[0].innerHTML;\r\n            var integer = parseInt(elem.replace(/,/g, ''), 10);\r\n            if (integer >= threshold) {\r\n                queues.push(tableChild[i].getElementsByTagName(\"td\")[1].getElementsByTagName(\"div\")[0].innerHTML);\r\n                fail = 1;\r\n            }\r\n        } catch (err) {\r\n            if (fail == 1) {\r\n                var failString = \"Queues with Failed Entries: \";\r\n                for (var i = 0; i < queues.length; i++) {\r\n                    failString += queues[i] + \", \";\r\n                }\r\n                api.fail(failString);\r\n            } else {\r\n                api.finish();\r\n            }\r\n        }\r\n    }\r\n}"
+      }
+    ]
+  },
+  "locations": [
+    "GEOLOCATION-3E5C618F168F83BD"
+  ],
+  "anomalyDetection": {
+    "outageHandling": {
+      "globalOutage": true,
+      "localOutage": false,
+      "localOutagePolicy": {
+        "affectedLocations": null,
+        "consecutiveRuns": null
+      },
+      "retryOnError": true
+    },
+    "loadingTimeThresholds": {
+      "enabled": false,
+      "thresholds": []
+    }
+  },
+  "tags": [],
+  "managementZones": [],
+  "automaticallyAssignedApps": [],
+  "manuallyAssignedApps": [],
+  "keyPerformanceMetrics": {
+    "loadActionKpm": "VISUALLY_COMPLETE",
+    "xhrActionKpm": "VISUALLY_COMPLETE"
+  }
+}

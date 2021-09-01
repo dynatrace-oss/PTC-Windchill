@@ -1,0 +1,119 @@
+{
+  "name": "Windchill File Server Download Check",
+  "frequencyMin": 60,
+  "enabled": false,
+  "type": "BROWSER",
+  "script": {
+    "type": "clickpath",
+    "version": "1.0",
+    "configuration": {
+      "device": {
+        "deviceName": "Desktop",
+        "orientation": "landscape"
+      },
+      "disableWebSecurity": false
+    },
+    "events": [
+      {
+        "type": "navigate",
+        "description": "Load document page",
+        "url": "https://URLREMOVED.COM",
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "a[href$=\"https://URLREMOVED.COM\"]"
+            },
+            {
+              "type": "css",
+              "value": "img[src$=\"https://URLREMOVED.COM\"]"
+            },
+            {
+              "type": "css",
+              "value": "#dataStoreGeneral table tbody tr:nth-child(3) td:nth-child(3) a:nth-child(3) img"
+            },
+            {
+              "type": "css",
+              "value": "#dataStoreGeneral table.attributePanel-group-panel tbody tr td.attributePanel-value a img:eq(1)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "javascript",
+        "description": "check for double click",
+        "javaScript": "var target1 = document.getElementById(\"dataStoreGeneral\");\rif (target1 !== null) {\r      api.info(\"--> found datastore\");\r} else {\r    api.info(\"--> not found datastore\");\r    api.skipNextSyntheticEvent();\r}"
+      },
+      {
+        "type": "click",
+        "description": "click",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "a[href$=\"https://URLREMOVED.COM\"]"
+            },
+            {
+              "type": "css",
+              "value": "img[src$=\"https://URLREMOVED.COM\"]"
+            },
+            {
+              "type": "css",
+              "value": "#dataStoreGeneral table tbody tr:nth-child(3) td:nth-child(3) a:nth-child(3) img"
+            },
+            {
+              "type": "css",
+              "value": "#dataStoreGeneral table.attributePanel-group-panel tbody tr td.attributePanel-value a img:eq(1)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "javascript",
+        "description": "Validate Replica Server",
+        "javaScript": "var replica = \"DOMAINREMOVED\";\nif (replica === window.location.host) {\n    api.finish();\n} else {\n    api.fail(\"Didn't download from replica server\");}"
+      }
+    ]
+  },
+  "locations": [
+    "GEOLOCATION-146A961B8F1400EE"
+  ],
+  "anomalyDetection": {
+    "outageHandling": {
+      "globalOutage": true,
+      "localOutage": false,
+      "localOutagePolicy": {
+        "affectedLocations": null,
+        "consecutiveRuns": null
+      },
+      "retryOnError": true
+    },
+    "loadingTimeThresholds": {
+      "enabled": false,
+      "thresholds": []
+    }
+  },
+  "tags": [],
+  "managementZones": [],
+  "automaticallyAssignedApps": [],
+  "manuallyAssignedApps": [],
+  "keyPerformanceMetrics": {
+    "loadActionKpm": "VISUALLY_COMPLETE",
+    "xhrActionKpm": "VISUALLY_COMPLETE"
+  }
+}
