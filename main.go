@@ -129,8 +129,8 @@ func (p *Processor) Process() error {
 			if data, err = p.Vars.Load(rootDir.Join(dir, file)); err != nil {
 				return err
 			}
-			var id string
-			if id, err = p.post(endpointName, endpointURL, data); err != nil {
+			// var id string
+			if err = p.post(endpointName, endpointURL, data); err != nil {
 				return err
 			}
 			
@@ -144,27 +144,26 @@ func (p *Processor) Process() error {
 			// 		return err
 			// 	}
 			// }
-
 		}
 	}
 	return nil
 }
 
-func (p *Processor) post(endpointName string, endpointURL string, data []byte) (string, error) {
+func (p *Processor) post(endpointName string, endpointURL string, data []byte) (error) {
 	var err error
 	var req *http.Request
 	if req, err = p.setupHTTPRequest("POST", endpointURL, data); err != nil {
-		return "", err
+		return err
 	}
 	var resp *http.Response
 	if resp, err = p.Client.Do(req); err != nil {
-		return "", err
+		return err
 	}
 	defer resp.Body.Close()
 
-	var id string
-	id, _, err = p.processResponse(resp, endpointName)
-	return id, err
+	// var id string
+	_, _, err = p.processResponse(resp, endpointName)
+	return err
 }
 
 func (p *Processor) setupHTTPRequest(method string, endpointURL string, data []byte) (*http.Request, error) {
