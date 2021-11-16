@@ -10,6 +10,9 @@
     "shared": true,
     "owner": "Dynatrace",
     "dashboardFilter": null,
+	"tags": [
+      "PTC"
+    ],
     "preset": true
   },
   "tiles": [
