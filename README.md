@@ -1,5 +1,6 @@
 # Dynatrace PTC Windchill Starter Set
 This repo contains files to create PTC Windchill assets in a Dynatrace tenant including application, metrics, dashboards and synthetic monitors. Check out our Dynatrace blog on PTC Windchill/ThingWorx [here](https://www.dynatrace.com/news/blog/ai-driven-observability-for-ptc-windchill-thingworx/).
+
 In order to create these entities in Dynatrace, you will need two items:
 
 Name | Description
