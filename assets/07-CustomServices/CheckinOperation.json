@@ -3,9 +3,9 @@
     "configurationVersions": [
       0
     ],
-    "clusterVersion": "1.211.90.20210216-141629"
+    "clusterVersion": "1.230.90.20211115-023414"
   },
-  "name": "CheckIn",
+  "name": "Checkin Operation",
   "enabled": true,
   "rules": [
     {
@@ -99,6 +99,103 @@
             "java.util.List"
           ],
           "returnType": "com.ptc.core.components.forms.FormResult"
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "wt.vc.wip.StandardWorkInProgressService",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTKeyedMap"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.vc.wip.Workable",
+            "java.lang.String"
+          ],
+          "returnType": "wt.vc.wip.Workable"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTKeyedMap",
+            "wt.folder.Folder"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection",
+            "java.lang.String",
+            "java.lang.String"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.vc.wip.Workable",
+            "java.lang.String",
+            "boolean"
+          ],
+          "returnType": "wt.vc.wip.Workable"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTKeyedMap",
+            "boolean"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection",
+            "java.lang.String"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection"
+          ],
+          "returnType": "void"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTKeyedMap",
+            "wt.fc.collections.WTValuedMap"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.WTObject"
+          ],
+          "returnType": "void"
+        },
+        {
+          "methodName": "checkin",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection",
+            "java.lang.String",
+            "wt.folder.Folder"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
         }
       ],
       "annotations": []

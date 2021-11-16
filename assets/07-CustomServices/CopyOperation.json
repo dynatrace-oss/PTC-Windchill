@@ -1,0 +1,55 @@
+{
+	"metadata": {
+		"configurationVersions": [
+			0
+		],
+		"clusterVersion": "1.224.83.20210902-162137"
+	},
+	"name": "Copy Operation",
+	"enabled": true,
+	"rules": [
+		{
+			"enabled": true,
+			"className": "com.ptc.netmarkets.model.NmObjectCommands",
+			"matcher": "EQUALS",
+			"methodRules": [
+				{
+					"methodName": "copy",
+					"argumentTypes": [
+						"com.ptc.netmarkets.util.beans.NmCommandBean"
+					],
+					"returnType": "com.ptc.netmarkets.util.table.NmHTMLTable"
+				},
+				{
+					"methodName": "list_copy",
+					"argumentTypes": [
+						"com.ptc.netmarkets.util.beans.NmCommandBean"
+					],
+					"returnType": "com.ptc.netmarkets.util.table.NmHTMLTable"
+				}
+			],
+			"annotations": []
+		},
+		{
+			"enabled": true,
+			"className": "com.ptc.netmarkets.model.StandardNmObjectService",
+			"matcher": "EQUALS",
+			"methodRules": [
+				{
+					"methodName": "getPSPart",
+					"argumentTypes": [
+						"java.lang.String",
+						"java.lang.String",
+						"java.lang.String",
+						"java.util.ArrayList"
+					],
+					"returnType": "java.util.ArrayList"
+				}
+			],
+			"annotations": []
+		}
+	],
+	"queueEntryPoint": false,
+	"queueEntryPointType": null,
+	"processGroups": []
+}
