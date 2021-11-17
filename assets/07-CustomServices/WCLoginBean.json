@@ -5,7 +5,7 @@
 		],
 		"clusterVersion": "1.224.83.20210902-162137"
 	},
-	"name": "WC LoginBean",
+	"name": "WC_LoginBean",
 	"enabled": true,
 	"rules": [
 		{
