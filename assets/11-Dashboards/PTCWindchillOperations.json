@@ -780,7 +780,7 @@
       "queries": [
         {
           "id": "A",
-          "metric": "ext:custom.jmx.ActiveUsers.metric_ActiveUserCount_1607449605485",
+          "metric": "ext:custom.jmx.ActiveUsers.metric_ActiveUserCount-1",
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
