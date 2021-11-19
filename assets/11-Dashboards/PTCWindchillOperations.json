@@ -1,0 +1,927 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      5
+    ],
+    "clusterVersion": "1.230.97.20211117-130823"
+  },
+  "dashboardMetadata": {
+    "name": "PTC Windchill - Operations",
+    "shared": true,
+    "owner": "Dynatrace",
+    "tags": [
+      "PTC"
+    ],
+    "preset": true
+  },
+  "tiles": [
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 228,
+        "width": 304,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Set Preference Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Edit Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Copy Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Paste Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "WC_LoginBean",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Delete Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkin Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Folder Navigation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Rename Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Document Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Move Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkout Operation",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 532,
+        "width": 570,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Create Document Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Edit Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Delete Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Folder Navigation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkout Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "WC_LoginBean",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Paste Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkin Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Set Preference Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Copy Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Move Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Rename Operation",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "COLUMN"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 228,
+        "width": 304,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.response.time",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Checkout Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "WC_LoginBean",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Copy Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Set Preference Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Document Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Rename Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Move Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Edit Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkin Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Paste Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Folder Navigation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Delete Operation",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 532,
+        "width": 570,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.response.time",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Copy Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkin Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Folder Navigation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkout Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Delete Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Paste Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Move Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "WC_LoginBean",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Document Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Edit Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Rename Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Set Preference Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Operation",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 950,
+        "left": 228,
+        "width": 304,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.errors.total.rate",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Paste Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkin Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Document Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Edit Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Copy Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Folder Navigation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Rename Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Move Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Set Preference Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Delete Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "WC_LoginBean",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkout Operation",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 950,
+        "left": 532,
+        "width": 570,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.errors.total.count",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Copy Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Document Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Rename Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkin Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Create Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Edit Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Delete Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Folder Navigation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Move Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "WC_LoginBean",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Paste Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Set Preference Operation",
+                    "evaluator": "IN"
+                  },
+                  {
+                    "value": "Checkout Operation",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "COLUMN"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        }
+      }
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 1178,
+        "width": 608,
+        "height": 608
+      },
+      "tileFilter": {},
+      "customName": "Action performance by user",
+      "query": "SELECT usersession.userId AS \"User\", name AS \"Action\", COUNT(*) AS \"Count\", MAX(requestErrorCount) AS \"Errors\", AVG(duration) AS \"Response time\" \nFROM useraction \nWHERE usersession.userId IS NOT NULL AND application = \"PTC Windchill\"\nGROUP BY usersession.userId, name \nORDER BY MAX(requestErrorCount), AVG(duration) DESC",
+      "type": "TABLE",
+      "limit": 50
+    },
+    {
+      "name": "Operations - Request count",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 228,
+        "width": 342,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Operations - Response time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 228,
+        "width": 342,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Operations - Failure rate",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 228,
+        "width": 342,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "User Analysis",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1178,
+        "width": 190,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Active Users",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1482,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:custom.jmx.ActiveUsers.metric_ActiveUserCount_1607449605485",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE",
+          "hideLegend": true
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {},
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        }
+      }
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1178,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Logins by user",
+      "query": "SELECT distinct(userId) AS User, count(*) AS Count FROM usersession WHERE userId IS NOT NULL GROUP BY userId",
+      "type": "TABLE",
+      "limit": 50
+    },
+    {
+      "name": "Application health",
+      "tileType": "APPLICATIONS",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "chartVisible": true
+    },
+    {
+      "name": "Host health",
+      "tileType": "HOSTS",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "chartVisible": true
+    },
+    {
+      "name": "Service health",
+      "tileType": "SERVICES",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "chartVisible": true
+    },
+    {
+      "name": "Database health",
+      "tileType": "DATABASES_OVERVIEW",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "chartVisible": true
+    },
+    {
+      "name": "Problems",
+      "tileType": "OPEN_PROBLEMS",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {}
+    }
+  ]
+}
