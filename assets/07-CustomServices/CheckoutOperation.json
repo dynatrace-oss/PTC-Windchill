@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      0
+    ],
+    "clusterVersion": "1.230.90.20211115-023414"
+  },
+  "name": "Checkout Operation",
+  "enabled": true,
+  "rules": [
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "wt.epm.workspaces.EPMStandardWorkspaceManager",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection",
+            "wt.vc.wip.WorkInProgressState"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "wt.epm.workspaces.EPMWorkspaceManager",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection",
+            "wt.vc.wip.WorkInProgressState"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.epm.workspaces.EPMWorkspace",
+            "wt.fc.collections.WTCollection"
+          ],
+          "returnType": "wt.fc.collections.WTValuedMap"
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "com.ptc.windchill.enterprise.wip.CheckoutObjectFormProcessor",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "doOperation",
+          "argumentTypes": [
+            "com.ptc.netmarkets.util.beans.NmCommandBean",
+            "java.util.List"
+          ],
+          "returnType": "com.ptc.core.components.forms.FormResult"
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "wt.vc.wip.StandardWorkInProgressService",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.vc.wip.Workable",
+            "wt.folder.Folder",
+            "java.lang.String",
+            "boolean",
+            "boolean"
+          ],
+          "returnType": "wt.vc.wip.CheckoutLink"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection",
+            "wt.folder.Folder",
+            "java.lang.String",
+            "boolean"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.vc.wip.Workable",
+            "wt.folder.Folder",
+            "java.lang.String"
+          ],
+          "returnType": "wt.vc.wip.CheckoutLink"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.vc.wip.Workable",
+            "wt.folder.Folder",
+            "java.lang.String",
+            "wt.vc.wip.WorkInProgressState"
+          ],
+          "returnType": "wt.vc.wip.CheckoutLink"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection",
+            "wt.folder.Folder",
+            "java.lang.String",
+            "boolean",
+            "wt.vc.wip.WorkInProgressState"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.fc.WTObject"
+          ],
+          "returnType": "void"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.vc.wip.Workable",
+            "wt.folder.Folder",
+            "java.lang.String",
+            "boolean"
+          ],
+          "returnType": "wt.vc.wip.CheckoutLink"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection",
+            "boolean"
+          ],
+          "returnType": "void"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection"
+          ],
+          "returnType": "void"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.vc.wip.Workable",
+            "boolean"
+          ],
+          "returnType": "void"
+        },
+        {
+          "methodName": "checkout",
+          "argumentTypes": [
+            "wt.fc.collections.WTCollection",
+            "wt.folder.Folder",
+            "java.lang.String"
+          ],
+          "returnType": "wt.fc.collections.WTCollection"
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "queueEntryPoint": false,
+  "queueEntryPointType": null,
+  "processGroups": []
+}

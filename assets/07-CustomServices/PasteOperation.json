@@ -1,0 +1,31 @@
+{
+	"metadata": {
+		"configurationVersions": [
+			0
+		],
+		"clusterVersion": "1.224.83.20210902-162137"
+	},
+	"name": "Paste Operation",
+	"enabled": true,
+	"rules": [
+		{
+			"enabled": true,
+			"className": "com.ptc.windchill.pdmlink.object.operations.pasteAsCopy.forms.PasteFormProcessor",
+			"matcher": "EQUALS",
+			"methodRules": [
+				{
+					"methodName": "doOperation",
+					"argumentTypes": [
+						"com.ptc.netmarkets.util.beans.NmCommandBean",
+						"java.util.List"
+					],
+					"returnType": "com.ptc.core.components.forms.FormResult"
+				}
+			],
+			"annotations": []
+		}
+	],
+	"queueEntryPoint": false,
+	"queueEntryPointType": null,
+	"processGroups": []
+}

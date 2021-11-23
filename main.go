@@ -84,6 +84,9 @@ func (p *Processor) Process() error {
 	if folders, err = p.readDir(string(rootDir), endpoints.Contains); err != nil {
 		return err
 	}
+	
+	// Remove trailing slash in URL if it exists
+	p.Config.URL = strings.TrimRight(p.Config.URL, "/")
 
 	// Perform an early sanity check without sending anything
 	// Benefit: If some of the folders or files are illegal/flawed nothing has been sent yet
@@ -133,17 +136,6 @@ func (p *Processor) Process() error {
 			if err = p.post(endpointName, endpointURL, data); err != nil {
 				return err
 			}
-			
-			// Sharingdetails API no longer required, configuring dashboards as preset which are visible to all users by default.
-			// if endpointName == "Dashboards" {
-			// 	time.Sleep(10 * time.Second)
-			// 	if p.Config.Verbose {
-			// 		log.Println("Sending sharing data")
-			// 	}
-			// 	if err := p.sendSharingDetails(id); err != nil {
-			// 		return err
-			// 	}
-			// }
 		}
 	}
 	return nil
@@ -187,39 +179,6 @@ func (p *Processor) setupHTTPRequest(method string, endpointURL string, data []b
 	req.Header.Add("Authorization", "Api-Token "+p.Config.APIToken)
 
 	return req, nil
-}
-
-func (p *Processor) sendSharingDetails(dashboardID string) error {
-	var err error
-	endpointURL := endpoints["DashboardSharingDetails"]
-	replacedURL := p.Config.URL + strings.Replace(endpointURL, "{id}", dashboardID, 1)
-	sharingDetails := SharingDetails{
-		ID:           dashboardID,
-		Published:    true,
-		Enabled:      true,
-		Permissions:  []Permission{{Type: "ALL", Permission: "VIEW"}},
-		PublicAccess: PublicAccess{ManagementZoneIDs: []string{}},
-	}
-	var data []byte
-	if data, err = json.Marshal(&sharingDetails); err != nil {
-		return err
-	}
-	// data := "{\"id\": \"{id}\",\"enabled\": true,\"published\": true,\"permissions\": [{\"type\": \"ALL\",\"permission\": \"VIEW\"}],\"publicAccess\": {\"managementZoneIds\": [],\"urls\": {}}}"
-	// replacedData := strings.Replace(data, "{id}", dashboardID, 1)
-	//fmt.Printf("replacedData=%s, replacedURL=%s\n", replacedData, replacedURL)
-	var req *http.Request
-	if req, err = p.setupHTTPRequest("PUT", replacedURL, []byte(data)); err != nil {
-		return err
-	}
-	var resp *http.Response
-	if resp, err = p.Client.Do(req); err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-	if _, _, err = p.processResponse(resp, "DashboardSharingDetails"); err != nil {
-		return err
-	}
-	return nil
 }
 
 func (p *Processor) processResponse(resp *http.Response, endpointName string) (string, string, error) {

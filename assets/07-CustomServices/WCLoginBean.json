@@ -1,0 +1,33 @@
+{
+	"metadata": {
+		"configurationVersions": [
+			0
+		],
+		"clusterVersion": "1.224.83.20210902-162137"
+	},
+	"name": "WC_LoginBean",
+	"enabled": true,
+	"rules": [
+		{
+			"enabled": true,
+			"fileName": "",
+			"className": "com.ptc.netmarkets.util.beans.NmLoginBean",
+			"matcher": "EQUALS",
+			"methodRules": [
+				{
+					"methodName": "getRemoteUser",
+					"argumentTypes": [],
+					"returnType": "java.lang.String"
+				},
+				{
+					"methodName": "<init>",
+					"returnType": "void"
+				}
+			],
+			"annotations": []
+		}
+	],
+	"queueEntryPoint": false,
+	"queueEntryPointType": null,
+	"processGroups": []
+}

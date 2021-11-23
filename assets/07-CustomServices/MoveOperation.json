@@ -1,0 +1,33 @@
+{
+	"metadata": {
+		"configurationVersions": [
+			0
+		],
+		"clusterVersion": "1.224.83.20210902-162137"
+	},
+	"name": "Move Operation",
+	"enabled": true,
+	"rules": [
+		{
+			"enabled": true,
+			"className": "wt.dataops.containermove.StandardContainerMoveService",
+			"matcher": "EQUALS",
+			"methodRules": [
+				{
+					"methodName": "moveImpl",
+					"argumentTypes": [
+						"wt.fc.collections.WTValuedMap",
+						"boolean",
+						"boolean",
+						"java.lang.String"
+					],
+					"returnType": "wt.fc.collections.WTCollection"
+				}
+			],
+			"annotations": []
+		}
+	],
+	"queueEntryPoint": false,
+	"queueEntryPointType": null,
+	"processGroups": []
+}

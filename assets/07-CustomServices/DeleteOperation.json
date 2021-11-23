@@ -1,0 +1,27 @@
+{
+	"metadata": {
+		"configurationVersions": [
+			0
+		],
+		"clusterVersion": "1.224.83.20210902-162137"
+	},
+	"name": "Delete Operation",
+	"enabled": true,
+	"rules": [
+		{
+			"enabled": true,
+			"className": "wt.dataops.delete.DeleteTask",
+			"matcher": "EQUALS",
+			"methodRules": [
+				{
+					"methodName": "_run",
+					"returnType": "com.ptc.core.task.TaskResult"
+				}
+			],
+			"annotations": []
+		}
+	],
+	"queueEntryPoint": false,
+	"queueEntryPointType": null,
+	"processGroups": []
+}
